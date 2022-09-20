@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   GridComponent,
   ColumnsDirective,
@@ -12,15 +12,21 @@ import {
   PdfExport,
   Edit,
   Inject
-} from "@syncfusion/ej2-react-grids"
+} from "@syncfusion/ej2-react-grids";
 
-import { ordersData, ordersGrid } from "../data/dummy"
+import { ordersData, ordersGrid } from "../data/dummy";
 
-import { Header } from "../components"
+import { Header } from "../components";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Orders = () => {
+  const { currentMode } = useStateContext();
   return (
-    <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
+    <div
+      className={`m-2 md:m-10 p-2 md:p-10 rounded-3xl ${
+        currentMode === "Dark" ? "bg-dark" : "bg-white"
+      }`}
+    >
       <Header category='Page' title='Orders' />
       <GridComponent
         id='gridcomp'
@@ -47,7 +53,7 @@ const Orders = () => {
         />
       </GridComponent>
     </div>
-  )
-}
+  );
+};
 
-export default Orders
+export default Orders;

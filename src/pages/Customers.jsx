@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   GridComponent,
   ColumnsDirective,
@@ -10,15 +10,22 @@ import {
   Toolbar,
   Sort,
   Filter
-} from "@syncfusion/ej2-react-grids"
+} from "@syncfusion/ej2-react-grids";
 
-import { customersData, customersGrid } from "../data/dummy"
+import { customersData, customersGrid } from "../data/dummy";
 
-import { Header } from "../components"
+import { Header } from "../components";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Customers = () => {
+  const { currentMode } = useStateContext();
+
   return (
-    <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
+    <div
+      className={`m-2 md:m-10 p-2 md:p-10 rounded-3xl ${
+        currentMode === "Dark" ? "bg-dark" : "bg-white"
+      }`}
+    >
       <Header category='Page' title='Customers' />
       <GridComponent
         width='auto'
@@ -39,7 +46,7 @@ const Customers = () => {
         <Inject services={[Page, Toolbar, Selection, Edit, Sort, Filter]} />
       </GridComponent>
     </div>
-  )
-}
+  );
+};
 
-export default Customers
+export default Customers;

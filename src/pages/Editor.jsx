@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   HtmlEditor,
   Image,
@@ -7,21 +7,28 @@ import {
   QuickToolbar,
   RichTextEditorComponent,
   Toolbar
-} from "@syncfusion/ej2-react-richtexteditor"
+} from "@syncfusion/ej2-react-richtexteditor";
 
-import { EditorData } from "../data/dummy"
-import { Header } from "../components"
+import { EditorData } from "../data/dummy";
+import { Header } from "../components";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Editor = () => {
+  const { currentMode } = useStateContext();
+
   return (
-    <div className='m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl'>
+    <div
+      className={`m-2 md:m-10 p-2 md:p-10 rounded-3xl ${
+        currentMode === "Dark" ? "bg-dark" : "bg-white"
+      }`}
+    >
       <Header title='Editor' category='App' />
       <RichTextEditorComponent id='rich-text-editor'>
         <EditorData />
         <Inject services={[Image, Link, HtmlEditor, QuickToolbar, Toolbar]} />
       </RichTextEditorComponent>
     </div>
-  )
-}
+  );
+};
 
-export default Editor
+export default Editor;

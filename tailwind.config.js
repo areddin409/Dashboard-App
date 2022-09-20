@@ -23,6 +23,9 @@ module.exports = {
       borderColor: {
         color: "rgba(0, 0, 0, 0.1)"
       },
+      textColors: {
+        main: "##1A97F5"
+      },
       width: {
         400: "400px",
         760: "760px",
@@ -40,10 +43,11 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern":
-          "linear-gradient(to bottom, rgba(59, 129, 202, 0.8), rgba(59, 129, 202, 0.1)), url('https://static.vecteezy.com/system/resources/previews/006/411/808/original/business-flat-drawing-businessman-riding-bicycle-on-arrow-worker-riding-bike-on-rising-arrow-business-metaphor-successful-businessman-go-up-at-bicycle-chart-go-up-cartoon-illustration-vector.jpg')"
+          "url('https://cdni.iconscout.com/illustration/premium/thumb/investment-earnings-5718971-4777777.png')"
+        // linear-gradient(to bottom, rgba(59, 129, 202, 0.8), rgba(59, 129, 202, 0.1)),
         // "linear-gradient(to bottom, rgba('#20232A',0.8), rgba('#33373E',0.5)), url('https://static.vecteezy.com/system/resources/previews/006/411/808/original/business-flat-drawing-businessman-riding-bicycle-on-arrow-worker-riding-bike-on-rising-arrow-business-metaphor-successful-businessman-go-up-at-bicycle-chart-go-up-cartoon-illustration-vector.jpg')"
       }
     }
   },
   plugins: []
-}
+};
