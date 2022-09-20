@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   ChartComponent,
   SeriesCollectionDirective,
@@ -8,17 +8,17 @@ import {
   Category,
   StackingColumnSeries,
   Tooltip
-} from "@syncfusion/ej2-react-charts"
+} from "@syncfusion/ej2-react-charts";
 
 import {
   stackedCustomSeries,
   stackedPrimaryXAxis,
   stackedPrimaryYAxis
-} from "../../data/dummy"
-import { useStateContext } from "../../contexts/ContextProvider"
+} from "../../data/dummy";
+import { useStateContext } from "../../contexts/ContextProvider";
 
 const Stacked = ({ width, height }) => {
-  const { currentMode } = useStateContext()
+  const { currentMode } = useStateContext();
 
   return (
     <ChartComponent
@@ -40,7 +40,7 @@ const Stacked = ({ width, height }) => {
         ))}
       </SeriesCollectionDirective>
     </ChartComponent>
-  )
-}
+  );
+};
 
-export default Stacked
+export default Stacked;
